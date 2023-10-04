@@ -1,5 +1,8 @@
 "use client";
 import { ResponsivePie } from "@nivo/pie";
+import { Browser, Robot } from "@phosphor-icons/react";
+import Tooltip from "./Tooltip";
+import { useRouter } from "next/navigation";
 
 export type Data = {
   id: string;
@@ -8,8 +11,31 @@ export type Data = {
 };
 
 export default function Graph(props: { data: Data[] }) {
+  const router = useRouter();
   return (
-    <div className="h-screen">
+    <div className="h-screen relative">
+      <div className="absolute z-10">
+        <Tooltip text="github">
+          <Browser
+            className="m-1"
+            size={32}
+            weight="bold"
+            onClick={() =>
+              router.push("https://github.com/suponji216/teianboweb")
+            }
+          />
+        </Tooltip>
+        <Tooltip text="github">
+          <Robot
+            className="m-1"
+            size={32}
+            weight="bold"
+            onClick={() =>
+              router.push("https://github.com/suponji216/teianbot")
+            }
+          />
+        </Tooltip>
+      </div>
       <ResponsivePie
         data={props.data}
         colors={{ scheme: "set3" }}

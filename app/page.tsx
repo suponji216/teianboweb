@@ -44,6 +44,7 @@ async function getData() {
         lt: now.endOf("month").toISOString(),
       },
     },
+    orderBy: { id: "asc" },
   });
   const discordIds = [...new Set(res.map((v) => v.User.discordId))];
   const data = await Promise.all(discordIds.map((v) => getUserData(res, v)));

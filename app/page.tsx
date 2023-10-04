@@ -2,6 +2,8 @@ import { PrismaClient } from "@prisma/client";
 import dayjs from "dayjs";
 import Graph from "./Graph";
 
+export const dynamic = "force-dynamic";
+
 const prisma = new PrismaClient();
 
 export default async function Home() {

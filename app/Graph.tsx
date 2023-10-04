@@ -36,6 +36,7 @@ export default function Graph(props: { data: Data[] }) {
           />
         </Tooltip>
       </div>
+      <div className="absolute bottom-0 right-0 mb-10 mr-10">単位：分</div>
       <ResponsivePie
         data={props.data}
         colors={{ scheme: "set3" }}
